@@ -79,4 +79,22 @@ section is [here](https://doc.rust-jp.rs/book-ja/ch02-00-guessing-game-tutorial.
 - `use std::cmp::Ordering;`
   - cmp::OrderingもResultと同様に、列挙子であり。値は、Less, Greater, Equal
   - match式は複数のアーム（腕、パターン）を持つ。switchに近い存在か？
+  - guessは、標準入力を受け取るために文字列で生成したが、ここから数値に変換しないと、matchで、secret_number と比較することができない。
+  - 値を型変換する時によく使われるのが、シャドーイングというRust特有の機能だ。
 
+```rust
+let guess: u32 = guess.trim().parse()
+    .expect("Please type a number!");
+```
+
+- このとき、右辺のguess（文字列）を左辺のguess（数値）で覆い隠す（シャドーイング）ことができる。何が嬉しいかというと、`guess_str` と `guess` などを作らなくて良くなること。
+- `trim()` は文字列型のメソッドで、両端の空白を取り除く
+- `parse()` も文字列型のメソッドで、数値に変換する。ただし、明示的に変換後の数値型を指定する必要がある。それが、左辺の`u32`である
+
+
+## ループで複数回の予想を可能にする
+
+section is [here](https://doc.rust-jp.rs/book-ja/ch02-00-guessing-game-tutorial.html#%E3%83%AB%E3%83%BC%E3%83%97%E3%81%A7%E8%A4%87%E6%95%B0%E5%9B%9E%E3%81%AE%E4%BA%88%E6%83%B3%E3%82%92%E5%8F%AF%E8%83%BD%E3%81%AB%E3%81%99%E3%82%8B).
+
+
+### point
