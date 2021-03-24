@@ -48,3 +48,19 @@ fn main() {
 - 標準出力関数（マクロ）の書式指定
   - `println!("val {} is not val {}", x, y)`
   - 間隔的には、Pythonに等しい。
+
+
+## ランダムな秘密の数字を生成する
+
+section is [here](https://doc.rust-jp.rs/book-ja/ch02-00-guessing-game-tutorial.html#%E7%A7%98%E5%AF%86%E3%81%AE%E6%95%B0%E5%AD%97%E3%82%92%E7%94%9F%E6%88%90%E3%81%99%E3%82%8B).
+
+
+
+### point
+
+- 用語
+  - パッケージのことをクレートと呼んでいる。
+  - これからrandクレートを追加して、使うことになる。
+  - 今作っている `guessing-game` は、**バイナリクレート**。randは、**ライブラリクレート**と呼ぶ
+- 新しくライブラリパッケージ（クレート）を追加したいと思ったら
+  - `Cargo.toml > [dependencies]` 直下に追加していく `rand = "0.3.14"` ってな感じで。
