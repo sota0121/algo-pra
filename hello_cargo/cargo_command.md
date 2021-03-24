@@ -1,5 +1,9 @@
 # cargo basic commands
 
+- create cargo project
+  - For Executable App Binary : `cargo new PRJ_NAME --bin`
+  - For Library : `cargo new PRJ_NAME --lib`
+  - for detail : `cargo new --help`
 - debug binary build
   - `cargo build`
 - debug binary run
