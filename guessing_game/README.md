@@ -28,6 +28,7 @@ fn main() {
 - `use std::io;`
   - おそらく、`#include <iostream>` 的なものと予想
   - 違ったっぽい。どうも `using std` に近そうだ。もし、この文がない場合は、`io::stdin` が `std::io:stdin` になるらしい
+  - またまた違ったっぽい。どうやら、C++でいうと、`include` 兼 `using` と言ったところ。Pythonでいうと、`import` に該当する。ライブラリも読み込むし、名前空間の宣言もする感じ。
 - 標準入力をうけとる、文字列変数の宣言。Rustのデフォルトはイミュータブルなので、可変にするには、mutを明示的に書く
   - `let mut guess = String::new();`
   - Stringクラスの静的メソッドnew()を呼び出している。ここは、C++と同じ。
@@ -64,3 +65,18 @@ section is [here](https://doc.rust-jp.rs/book-ja/ch02-00-guessing-game-tutorial.
   - 今作っている `guessing-game` は、**バイナリクレート**。randは、**ライブラリクレート**と呼ぶ
 - 新しくライブラリパッケージ（クレート）を追加したいと思ったら
   - `Cargo.toml > [dependencies]` 直下に追加していく `rand = "0.3.14"` ってな感じで。
+- `cargo doc --open`
+  - ローカルに存在する全てのクレートのドキュメントをビルドし、ブラウザで閲覧できる機能。やばい。
+
+
+## 秘密の数字と予想結果を比較する
+
+section is [here](https://doc.rust-jp.rs/book-ja/ch02-00-guessing-game-tutorial.html#%E4%BA%88%E6%83%B3%E3%81%A8%E7%A7%98%E5%AF%86%E3%81%AE%E6%95%B0%E5%AD%97%E3%82%92%E6%AF%94%E8%BC%83%E3%81%99%E3%82%8B).
+
+
+### point
+
+- `use std::cmp::Ordering;`
+  - cmp::OrderingもResultと同様に、列挙子であり。値は、Less, Greater, Equal
+  - match式は複数のアーム（腕、パターン）を持つ。switchに近い存在か？
+
