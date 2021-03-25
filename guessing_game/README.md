@@ -101,3 +101,18 @@ section is [here](https://doc.rust-jp.rs/book-ja/ch02-00-guessing-game-tutorial.
 
 - while文みたいな役割を担うのが、`loop`
 - match内の各アームでは、`=>` のあとに `{}` ブロックを作れる。その中でbreakを記述する。switch文ぽい。
+- 「不正な場合クラッシュ」は`[Result].expect()` 、これを「適切なエラー処理」に変更する場合は、`match .. {Ok=>, Err=>}` を使う。ちょうど以下のように。
+
+```rust
+// 数値じゃなければクラッシュ
+let guess: u32 = guess.trim().parse()
+    .expect("Please type a number!");
+
+// 戻り値によって適切なエラー処理
+let guess: u32 = match guess.trim().parse() {
+    Ok(num) => num, // num にparse結果の数値が入っている。それが guess: u32 に入れられる
+    Err(_) => continue, // _ は、全てのエラーを指す
+};
+```
+
+- 
