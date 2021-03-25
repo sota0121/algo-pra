@@ -114,5 +114,3 @@ let guess: u32 = match guess.trim().parse() {
     Err(_) => continue, // _ は、全てのエラーを指す
 };
 ```
-
-- 
