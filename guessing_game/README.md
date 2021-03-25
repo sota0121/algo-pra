@@ -100,3 +100,4 @@ section is [here](https://doc.rust-jp.rs/book-ja/ch02-00-guessing-game-tutorial.
 ### point
 
 - while文みたいな役割を担うのが、`loop`
+- match内の各アームでは、`=>` のあとに `{}` ブロックを作れる。その中でbreakを記述する。switch文ぽい。
