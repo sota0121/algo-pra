@@ -9,6 +9,13 @@ Competitive programming practice, and Rust practice. Codes are written in Python
    2. Rust implementation
 
 
+## structure
+
+- `rust-basic/`: studying space for rust basic.
+- `algo-py/`: studying space for algorithm in `Python`.
+- `algo-rs/`: studying space for algorithm in `Rust`.
+
+
 ## refs
 
 - [アルゴリズムとデータ構造](https://www.amazon.co.jp/dp/4065128447)
