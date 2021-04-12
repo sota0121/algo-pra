@@ -17,6 +17,8 @@ Competitive programming practice, and Rust practice. Codes are written in Python
 - `rust-basic/`: studying space for rust basic.
 - `algo-py/`: studying space for algorithm in `Python`.
 - `algo-rs/`: studying space for algorithm in `Rust`.
+- `algo-xx/jsu_xx`: studying space for [Jun Sakai's Udemy program](https://www.udemy.com/course/python-algo/).
+- `algo-xx/koab_xx`: studying space for [Kensuke Otsuki's Algorithm Book](https://www.amazon.co.jp/dp/4065128447).
 
 
 ## refs
