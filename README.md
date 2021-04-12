@@ -8,6 +8,8 @@ Competitive programming practice, and Rust practice. Codes are written in Python
    1. Python implementation
    2. Rust implementation
 3. Basic algorithm implementation and exercise. Subjects are in [Kensuke Otsuki's Algorithm Book](https://www.amazon.co.jp/dp/4065128447). Source codes in C++ are [here](https://github.com/drken1215/book_algorithm_solution)
+   1. Python implementation
+   2. Rust implementation
 
 
 ## structure
