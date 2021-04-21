@@ -3,6 +3,22 @@ from typing import Tuple
 
 # K以下の753数を数える問題。許容計算量は、O(3^d)。ただし、dはKの桁数。
 
+# 動的計画法で解く
+def count_consists_of_three_nums_dp(
+    n1: int, n2: int, n3: int, K: int) -> Tuple[int, int]:
+    """考えたこと
+        - 制約条件は、K以下。dが3以上。これがベースケース作りに繋がると思う
+        - 漸化式の元になる考え方は
+            - 7/5/3からそれぞれ1つずつ選び、
+            - d-3>0 ならば、d-3回、重複ありで7/5/3から数値を選ぶ
+            - d桁取り終えたら、並べ替えのパターンを昇順にforループを回し
+            - Kより大になったらおわり
+        - わからないところ
+            - 関数一回でなんの処理をすればいいか、どういう単位で再帰すればいいか
+    """
+    return 1, 2
+
+
 # 線形探索
 def count_consists_of_three_nums(n1: int, n2: int, n3: int, K: int) -> Tuple[int, int]:
     # K is more than the least number
