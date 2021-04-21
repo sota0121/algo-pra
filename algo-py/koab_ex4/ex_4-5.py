@@ -19,6 +19,59 @@ def count_consists_of_three_nums_dp(
     return 1, 2
 
 
+# 動的計画法で解く（回答）
+class ThreeNumbersCounter():
+    def __init__(self) -> None:
+        self.count = 0
+        self.cal_cnt = 0
+    
+    def RecursiveCount(self, K, cur_number, used_number):
+        # ベースケース
+        if cur_number > K:
+            return
+        # 7 を含む場合はカウンターを増やす
+        if used_number == 0b111:
+            self.count += 1
+        
+        # ...
+        # I don't know !
+
+# ====================
+# C++ 実装だと以下だが、
+# - if (use == 0b111) ++counter
+# - func(... user | 0b001 , ...)
+# の部分が何をやってるのかがわからない。故にPython実装も書けない
+#include <iostream>
+# using namespace std;
+
+# // N: 入力
+# // cur: 現在の値
+# // use: 7, 5, 3 のうちどれを使ったか
+# // counter: 答え
+# void func(long long N, long long cur, int use, long long &counter){
+#     if (cur > N) return; // ベースケース
+#     if (use == 0b111) ++counter; // 答えを増やす
+
+#     // 7 を付け加える
+#     func(N, cur * 10 + 7, use | 0b001, counter);
+
+#     // 5 を付け加える
+#     func(N, cur * 10 + 5, use | 0b010, counter);
+
+#     // 3 を付け加える
+#     func(N, cur * 10 + 3, use | 0b100, counter);
+# }
+
+# int main() {
+#     long long N;
+#     cin >> N;
+#     long long counter = 0;
+#     func(N, 0, 0, counter);
+#     cout << counter << endl;
+# }
+# ====================
+
+
 # 線形探索
 def count_consists_of_three_nums(n1: int, n2: int, n3: int, K: int) -> Tuple[int, int]:
     # K is more than the least number
