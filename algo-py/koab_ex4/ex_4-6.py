@@ -38,8 +38,8 @@ def partial_sum(i: int, W: int, numbers: List[int]) -> bool:
 def partial_sum_memorized(i: int, W: int, numbers: List[int]) -> bool:
     # すでに計算しているならば計算しない
     global memo
-    if memo[i][W] is not None:
-        return memo[i][W]
+    if memo[W] is not None:
+        return memo[W]
     
     # show process
     global calc_cnt
@@ -49,22 +49,22 @@ def partial_sum_memorized(i: int, W: int, numbers: List[int]) -> bool:
     # base case
     if i == 0:
         if W == 0:
-            memo[i][W] = True
-            return True
+            memo[W] = True
+            return memo[W]
         else:
-            memo[i][W] = False
-            return False
+            memo[W] = False
+            return memo[W]
     
     # a[i-1] を選ばない場合
     if partial_sum_memorized(i - 1, W, numbers):
-        memo[i-1][W] = True
-        return True
+        memo[W] = True
+        return memo[W]
     # a[i-1] を選ぶ場合
     if partial_sum_memorized(i - 1, W - numbers[i - 1], numbers):
-        memo[i-1][W] = True
-        return True
-    memo[i][W] = False
-    return False
+        memo[W] = True
+        return memo[W]
+    memo[W] = False
+    return memo[W]
 
 
 if __name__ == "__main__":
@@ -74,7 +74,8 @@ if __name__ == "__main__":
     W = int(input('W? >>'))
     
     # init memo 2d array
-    memo = [[None for _ in range(W+1)] for _ in range(N+1)] # row=N+1, col=W+1
+    #memo = [[None for _ in range(W+1)] for _ in range(N+1)] # row=N+1, col=W+1
+    memo = [None for _ in range(W+1)]
     
     if partial_sum_memorized(N, W, numbers):
         print('Yes')
